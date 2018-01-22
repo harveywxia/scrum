@@ -7,10 +7,56 @@
     <title>Scrum board</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'board/css/board.css' %}">
+    {#    定义home-template#}
+    <script type="text/html" id="home-template">
+        <h1>Welcome to my Scrum Board Project!</h1>
+    </script>
+
+    <script id="login-template" type="text/html">
+        <form action="" method="post">
+            <label for="id_username">Username</label>
+            <input id="id_username" type="text" name="username" maxlength="30" required/>
+            <label for="id_password">Password</label>
+            <input id="id_password" type="password" name="password" required/>
+            <button type="submit">Login</button>
+        </form>
+    </script>
+    <script id="header-template" type="text/html">
+        <span class="title">
+            Scrum board Example
+        </span>
+        <% if(authenticated){ %>
+            <nav>
+                <a href="/" class="button">Your Sprints</a>
+                <a href="#" class="logout button">Logout</a>
+            </nav>
+        <% } %>
+    </script>
 </head>
 <body>
+    <!--该id对应router.js中的选择器-->
+    <div id="content"></div>
+    <!--注意引用顺序-->
     <script src="{% static 'board/vendor/jquery.js' %}"></script>
     <script src="{% static 'board/vendor/underscore.js' %}"></script>
     <script src="{% static 'board/vendor/backbone.js' %}"></script>
+
+    <script id="config" type="text/json">
+        {
+            "models": {},
+            "collections": {},
+            "views": {},
+            "router": null,
+
+            "apiRoot": "{% url 'api-root' %}",
+            "apiLogin": "{% url 'api-token' %}"
+        }
+    </script>
+
+    <script src="{% static 'board/js/app.js' %}"></script>
+    <script src="{% static 'board/js/models.js' %}"></script>
+    <script src="{% static 'board/js/router.js' %}"></script>
+    <script src="{% static 'board/js/views.js' %}"></script>
 </body>
 </html>
