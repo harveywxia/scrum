@@ -1,0 +1,21 @@
+{
+  "name": "scrum",
+  "homepage": "https://github.com/wxia1024/scrum",
+  "authors": [
+    "夏威 <wxia1024@126.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

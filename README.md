@@ -16,3 +16,13 @@
 2. user
 **username**: xiawei
 **password**: xiawei123456
+
+
+### 问题
+1. 请求http://127.0.0.1:8000/api/sprints
+返回
+{
+    "detail": "Authentication credentials were not provided."
+}
+解决:
+利用postman请求，需要添加basicauth（添加用户名密码）
